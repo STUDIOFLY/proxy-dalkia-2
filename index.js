@@ -15,4 +15,12 @@ const dalkiaProxy = createProxyMiddleware({
 });
 
 app.use('/dalkia', dalkiaProxy);
-app.listen(port, () => console.log(`Dalkia proxy server listening on port ${port}`));
+
+// Route pour la racine
+app.get('/', (req, res) => {
+  res.send('Hello, world!'); // Remplacez cette ligne par le code approprié pour votre application
+});
+
+app.listen(port, () => {
+  console.log(`Dalkia proxy server listening on port ${port}`);
+});
